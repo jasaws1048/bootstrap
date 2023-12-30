@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - West Sparrow Solutions Inc.</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #181818;
+            background-color: white;
+        }
+
+        header, footer {
+            background-color: #aa0201;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #181818;
+        }
+
+        nav {
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px 0;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        footer {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="digital-marketing.html">Digital Marketing</a>
+            <a href="web-design.html">Website Design & Development</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #F4F4F4, #E0E0E0); /* Light glossy background gradient */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #aa0201; /* Red background color */
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White background color */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #000; /* Black text color */
+            font-size: 28px; /* Increased font size */
+            font-weight: bold; /* Bold text */
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            appearance: none;
+        }
+        .country-code-container {
+            display: flex;
+            align-items: center;
+        }
+        #countryCode {
+            width: 20%;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        #phone {
+            flex: 1;
+        }
+        button {
+            background-color: #aa0201; /* Red background color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .footer {
+            background-color: #aa0201; /* Red background color */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <form onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <div class="country-code-container">
+                <label for="countryCode">Country Code:</label>
+                <select id="countryCode" name="countryCode" required>
+                    <option value="+1">+1 (USA/Canada)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+            </div>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <div class="footer">
+        West Sparrow Solutions Inc.&nbsp;&nbsp;&nbsp;&nbsp;Email: <a href="mailto:info@westsparrow.ca" style="color: #fff;">info@westsparrow.ca</a>&nbsp;&nbsp;&nbsp;&nbsp;Cell: +1 (780) 678-7447
+    </div>
+
+    <script>
+        function validateForm() {
+            const nameField = document.getElementById('name');
+            const phoneField = document.getElementById('phone');
+            const emailField = document.getElementById('email');
+            
+            // Validate name (only alphabets and spaces)
+            const namePattern = /^[A-Za-z ]+$/;
+            if (!namePattern.test(nameField.value)) {
+                alert('Name should contain only alphabets and spaces.');
+                return false;
+            }
+
+            // Validate phone number (10-digit number)
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phoneField.value)) {
+                alert('Phone number should be a 10-digit number.');
+                return false;
+            }
+
+            // Validate email address
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(emailField.value)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
